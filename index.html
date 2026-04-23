@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Belle & Chic – Mode Féminine Élégante</title>
+  <meta name="description" content="Sacs, vêtements et lingerie de qualité premium. Livraison rapide au Burkina Faso."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce-bar">
+    <div class="announce-inner">
+      <span>✦ Nouvelle Collection 2026</span>
+      <span class="sep">|</span>
+      <span>Livraison rapide au Burkina Faso</span>
+      <span class="sep">|</span>
+      <span>Commandez via <strong>WhatsApp</strong> en 30 secondes</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="#accueil" class="logo">Belle <em>&amp;</em> Chic</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#accueil" class="nav-link">Accueil</a></li>
+        <li><a href="#collection" class="nav-link">Collection</a></li>
+        <li><a href="#produits" class="nav-link">Boutique</a></li>
+        <li><a href="#apropos" class="nav-link">À propos</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="https://wa.me/22670000000?text=Bonjour%20Belle%20%26%20Chic" target="_blank" class="nav-wa">
+        <i class="fa-brands fa-whatsapp"></i><span>Commander</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- MOBILE OVERLAY + DRAWER -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+  <aside class="mob-drawer" id="mobDrawer">
+    <div class="drawer-top">
+      <span class="logo" style="font-size:1.2rem;">Belle <em>&amp;</em> Chic</span>
+      <button id="drawerClose"><i class="fa fa-xmark"></i></button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#accueil"><i class="fa fa-house"></i> Accueil</a>
+      <a href="#collection"><i class="fa fa-sparkles"></i> Collection</a>
+      <a href="#produits"><i class="fa fa-bag-shopping"></i> Boutique</a>
+      <a href="#apropos"><i class="fa fa-heart"></i> À propos</a>
+      <a href="#contact"><i class="fa fa-envelope"></i> Contact</a>
+    </nav>
+    <a href="https://wa.me/22670000000" target="_blank" class="drawer-wa-btn">
+      <i class="fa-brands fa-whatsapp"></i> Commander maintenant
+    </a>
+  </aside>
+
+  <!-- HERO -->
+  <section class="hero" id="accueil">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1800&q=90" alt="Hero" class="hero-img"/>
+      <div class="hero-veil"></div>
+    </div>
+    <div class="hero-body">
+      <div class="hero-content">
+        <p class="hero-eyebrow hero-anim">— Collection Printemps 2026 —</p>
+        <h1 class="hero-title hero-anim d1">L'élégance<br><em>à votre image</em></h1>
+        <p class="hero-sub hero-anim d2">Sacs, vêtements &amp; lingerie pour la femme moderne, confiante et raffinée.</p>
+        <div class="hero-btns hero-anim d3">
+          <a href="#produits" class="btn-hero">Découvrir la collection</a>
+          <a href="https://wa.me/22670000000?text=Bonjour,%20je%20voudrais%20voir%20votre%20catalogue." target="_blank" class="btn-hero-wa">
+            <i class="fa-brands fa-whatsapp"></i> Catalogue WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="hero-scroll"><div class="hs-line"></div><span>Découvrir</span></div>
+    </div>
+    <div class="hero-trust hero-anim d4">
+      <div class="ht-item"><i class="fa-solid fa-star"></i><span>+500 clientes</span></div>
+      <div class="ht-sep"></div>
+      <div class="ht-item"><i class="fa-solid fa-truck-fast"></i><span>Livraison 48h</span></div>
+      <div class="ht-sep"></div>
+      <div class="ht-item"><i class="fa-solid fa-shield-halved"></i><span>Paiement sécurisé</span></div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="cat-section" id="collection">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="section-tag">Notre univers</p>
+        <h2>Explorez nos <em>catégories</em></h2>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card reveal" data-filter-target="sac">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=700&q=85" alt="Sacs"/><div class="cat-veil"></div></div>
+          <div class="cat-label"><h3>Sacs</h3><p>À main · Mini bag · Tote</p></div>
+        </div>
+        <div class="cat-card cat-tall reveal d1" data-filter-target="vetement">
+          <div class="cat-img"><img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=700&q=85" alt="Vêtements"/><div class="cat-veil"></div></div>
+          <div class="cat-label"><h3>Vêtements</h3><p>Robes · Blouses · Tailleurs</p></div>
+        </div>
+        <div class="cat-card reveal d2" data-filter-target="lingerie">
+          <div class="cat-img"><img src="lingerie1.jpg" alt="Lingerie"/><div class="cat-veil"></div></div>
+          <div class="cat-label"><h3>Lingerie</h3><p>Ensembles · Nuisettes</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUITS -->
+  <section class="products-section" id="produits">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="section-tag">Notre boutique</p>
+        <h2>Nos produits <em>phares</em></h2>
+        <p class="sec-desc">Des pièces choisies avec soin pour refléter votre personnalité unique.</p>
+      </div>
+      <div class="filters reveal">
+        <button class="filter-btn active" data-filter="all">Tout voir</button>
+        <button class="filter-btn" data-filter="sac">Sacs</button>
+        <button class="filter-btn" data-filter="vetement">Vêtements</button>
+        <button class="filter-btn" data-filter="lingerie">Lingerie</button>
+      </div>
+      <div class="products-grid" id="productsGrid">
+
+        <div class="product-card reveal" data-category="sac">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=85" alt="Sac Élégant Caramel" loading="lazy"/>
+            <div class="pc-badge">Populaire</div>
+            <div class="pc-overlay">
+              <a href="https://wa.me/22670000000?text=Je%20commande%20le%20Sac%20Élégant%20Caramel%20-%2025%20000%20FCFA" target="_blank" class="pc-wa-btn">
+                <i class="fa-brands fa-whatsapp"></i> Commander
+              </a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-cat">Sac à main</span>
+            <h3>Sac Élégant Caramel</h3>
+            <div class="pc-foot"><p class="pc-price">25 000 <span>FCFA</span></p><div class="pc-stars">★★★★★</div></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal d1" data-category="sac">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=85" alt="Sac Mini Rose" loading="lazy"/>
+            <div class="pc-overlay">
+              <a href="https://wa.me/22670000000?text=Je%20commande%20le%20Sac%20Mini%20Rose%20-%2018%20000%20FCFA" target="_blank" class="pc-wa-btn"><i class="fa-brands fa-whatsapp"></i> Commander</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-cat">Mini bag</span>
+            <h3>Sac Mini Rose</h3>
+            <div class="pc-foot"><p class="pc-price">18 000 <span>FCFA</span></p><div class="pc-stars">★★★★☆</div></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal d2" data-category="sac">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&q=85" alt="Tote Bag Beige" loading="lazy"/>
+            <div class="pc-overlay">
+              <a href="https://wa.me/22670000000?text=Je%20commande%20le%20Tote%20Bag%20Beige%20-%2015%20000%20FCFA" target="_blank" class="pc-wa-btn"><i class="fa-brands fa-whatsapp"></i> Commander</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-cat">Tote bag</span>
+            <h3>Tote Bag Beige</h3>
+            <div class="pc-foot"><p class="pc-price">15 000 <span>FCFA</span></p><div class="pc-stars">★★★★★</div></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="lingerie">
+          <div class="pc-img">
+            <img src="lingerie1.jpg" alt="Complet Lingerie Coton" loading="lazy"/>
+            <div class="pc-badge pc-badge-new">Nouveau</div>
+            <div class="pc-overlay">
+              <a href="https://wa.me/22670000000?text=Je%20commande%20le%20Complet%20Lingerie%20Coton%20-%2015%20000%20FCFA" target="_blank" class="pc-wa-btn"><i class="fa-brands fa-whatsapp"></i> Commander</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-cat">Lingerie Coton</span>
+            <h3>Complet Lingerie Coton</h3>
+            <div class="pc-foot"><p class="pc-price">15 000 <span>FCFA</span></p><div class="pc-stars">★★★★★</div></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal d1" data-category="lingerie">
+          <div class="pc-img">
+            <img src="Nuisette_de_pyjama_avec_imprimé_nœud_et_bordure_en_laitue___Mode_en_ligne.jpg" alt="Nuisette de Pyjama" loading="lazy"/>
+            <div class="pc-badge pc-badge-new">Nouveau</div>
+            <div class="pc-overlay">
+              <a href="https://wa.me/22670000000?text=Je%20commande%20la%20Nuisette%20Pyjama%20-%2010%20000%20FCFA" target="_blank" class="pc-wa-btn"><i class="fa-brands fa-whatsapp"></i> Commander</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-cat">Lingerie</span>
+            <h3>Nuisette de Pyjama</h3>
+            <div class="pc-foot"><p class="pc-price">10 000 <span>FCFA</span></p><div class="pc-stars">★★★★☆</div></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal d2" data-category="vetement">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=600&q=85" alt="Robe Florale" loading="lazy"/>
+            <div class="pc-overlay">
+              <a href="https://wa.me/22670000000?text=Je%20commande%20la%20Robe%20Florale%20Été%20-%2032%20000%20FCFA" target="_blank" class="pc-wa-btn"><i class="fa-brands fa-whatsapp"></i> Commander</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-cat">Robe</span>
+            <h3>Robe Florale Été</h3>
+            <div class="pc-foot"><p class="pc-price">32 000 <span>FCFA</span></p><div class="pc-stars">★★★★★</div></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal" data-category="vetement">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=85" alt="Blouse Chic Ivoire" loading="lazy"/>
+            <div class="pc-overlay">
+              <a href="https://wa.me/22670000000?text=Je%20commande%20la%20Blouse%20Chic%20Ivoire%20-%2014%20500%20FCFA" target="_blank" class="pc-wa-btn"><i class="fa-brands fa-whatsapp"></i> Commander</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-cat">Haut</span>
+            <h3>Blouse Chic Ivoire</h3>
+            <div class="pc-foot"><p class="pc-price">14 500 <span>FCFA</span></p><div class="pc-stars">★★★★☆</div></div>
+          </div>
+        </div>
+
+        <div class="product-card reveal d1" data-category="vetement">
+          <div class="pc-img">
+            <img src="https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?w=600&q=85" alt="Ensemble Tailleur Rose" loading="lazy"/>
+            <div class="pc-badge">Premium</div>
+            <div class="pc-overlay">
+              <a href="https://wa.me/22670000000?text=Je%20commande%20l'Ensemble%20Tailleur%20Rose%20-%2045%20000%20FCFA" target="_blank" class="pc-wa-btn"><i class="fa-brands fa-whatsapp"></i> Commander</a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <span class="pc-cat">Tailleur</span>
+            <h3>Ensemble Tailleur Rose</h3>
+            <div class="pc-foot"><p class="pc-price">45 000 <span>FCFA</span></p><div class="pc-stars">★★★★★</div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="products-cta reveal">
+        <a href="https://wa.me/22670000000?text=Bonjour,%20je%20voudrais%20voir%20tout%20votre%20catalogue." target="_blank" class="btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Voir tout le catalogue
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHIFFRES -->
+  <div class="stats-banner">
+    <div class="container stats-grid">
+      <div class="stat-item reveal"><span class="stat-n">500+</span><span class="stat-l">Clientes satisfaites</span></div>
+      <div class="stat-div"></div>
+      <div class="stat-item reveal d1"><span class="stat-n">98%</span><span class="stat-l">Avis positifs</span></div>
+      <div class="stat-div"></div>
+      <div class="stat-item reveal d2"><span class="stat-n">48h</span><span class="stat-l">Délai livraison</span></div>
+      <div class="stat-div"></div>
+      <div class="stat-item reveal d3"><span class="stat-n">3 ans</span><span class="stat-l">D'expérience</span></div>
+    </div>
+  </div>
+
+  <!-- AVANTAGES -->
+  <section class="why-section">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="section-tag">Nos engagements</p>
+        <h2>Pourquoi choisir <em>Belle & Chic</em> ?</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="wc-icon"><i class="fa-solid fa-gem"></i></div>
+          <h3>Qualité Premium</h3>
+          <p>Chaque article est sélectionné avec soin pour vous garantir un produit durable et raffiné qui traversera les saisons.</p>
+        </div>
+        <div class="why-card reveal d1">
+          <div class="wc-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3>Livraison Rapide</h3>
+          <p>Commandez et recevez votre colis en 24 à 48h partout au Burkina Faso, chez vous ou au point de retrait.</p>
+        </div>
+        <div class="why-card reveal d2">
+          <div class="wc-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <h3>Commande WhatsApp</h3>
+          <p>Passez votre commande directement sur WhatsApp en quelques secondes. Simple, rapide, sans tracas.</p>
+        </div>
+        <div class="why-card reveal d3">
+          <div class="wc-icon"><i class="fa-solid fa-rotate-left"></i></div>
+          <h3>SAV Réactif</h3>
+          <p>Votre satisfaction est notre priorité absolue. Échanges et retours facilités dans les 7 jours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGES -->
+  <section class="testi-section">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="section-tag">Elles nous font confiance</p>
+        <h2>Ce que disent <em>nos clientes</em></h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="tc-stars">★★★★★</div>
+          <p>"J'ai commandé un sac et une robe pour une soirée. Livraison le lendemain, qualité irréprochable. Je recommande à toutes mes amies !"</p>
+          <div class="tc-author">
+            <div class="tc-av">A</div>
+            <div><strong>Aminata K.</strong><span>Ouagadougou</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal d1">
+          <div class="tc-stars">★★★★★</div>
+          <p>"Le complet lingerie est magnifique, très doux et confortable. Le service client est réactif et très attentif. Parfait !"</p>
+          <div class="tc-author">
+            <div class="tc-av" style="background:var(--gold);">F</div>
+            <div><strong>Fatou D.</strong><span>Bobo-Dioulasso</span></div>
+          </div>
+        </div>
+        <div class="testi-card reveal d2">
+          <div class="tc-stars">★★★★★</div>
+          <p>"Belle & Chic c'est ma boutique préférée depuis 2 ans. Les collections sont toujours tendances et les prix vraiment accessibles."</p>
+          <div class="tc-author">
+            <div class="tc-av" style="background:#8B6F47;">M</div>
+            <div><strong>Marie O.</strong><span>Koudougou</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section class="about-section" id="apropos">
+    <div class="container about-layout">
+      <div class="about-visual reveal">
+        <div class="av-main"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&q=85" alt="Boutique"/></div>
+        <div class="av-accent"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=85" alt="Mode"/></div>
+        <div class="av-badge"><span class="av-num">+500</span><span class="av-lbl">Clientes<br>satisfaites</span></div>
+      </div>
+      <div class="about-content reveal d2">
+        <p class="section-tag">Notre histoire</p>
+        <h2>À propos de <em>Belle & Chic</em></h2>
+        <div class="about-line"></div>
+        <p>Fondée avec passion, <strong>Belle & Chic</strong> est une boutique dédiée à la femme moderne qui sait ce qu'elle veut : du style, de la qualité et de l'originalité.</p>
+        <p>Nous croyons que chaque femme mérite de se sentir belle et unique. C'est pourquoi nous sélectionnons rigoureusement chaque pièce pour offrir une expérience de mode accessible et raffinée.</p>
+        <div class="about-vals">
+          <div class="av-row"><i class="fa-solid fa-check"></i><span><strong>Mission :</strong> Sublimer chaque femme au quotidien</span></div>
+          <div class="av-row"><i class="fa-solid fa-check"></i><span><strong>Vision :</strong> Référence mode au Burkina Faso</span></div>
+          <div class="av-row"><i class="fa-solid fa-check"></i><span><strong>Valeurs :</strong> Élégance, qualité, accessibilité</span></div>
+        </div>
+        <a href="#contact" class="btn-primary">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="section-tag">Parlons-nous</p>
+        <h2>Contactez-<em>nous</em></h2>
+        <p class="sec-desc">Une question, une commande ou un conseil ? Nous sommes là pour vous.</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-form reveal">
+          <form id="contactForm" novalidate>
+            <div class="fg"><label for="name">Votre nom</label><input type="text" id="name" placeholder="Ex: Aminata Ouédraogo" required/></div>
+            <div class="fg"><label for="email">Votre email</label><input type="email" id="email" placeholder="exemple@mail.com" required/></div>
+            <div class="fg"><label for="message">Votre message</label><textarea id="message" rows="5" placeholder="Décrivez votre demande..." required></textarea></div>
+            <button type="submit" class="btn-primary btn-full">Envoyer <i class="fa-solid fa-paper-plane"></i></button>
+            <p class="form-success" id="formSuccess">✅ Message envoyé ! Nous vous répondrons très vite.</p>
+          </form>
+        </div>
+        <div class="contact-info reveal d2">
+          <div class="ci-card ci-wa">
+            <div class="ci-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div><h4>Commander sur WhatsApp</h4><p>Réponse en moins de 30 min</p>
+              <a href="https://wa.me/22670000000" target="_blank" class="ci-wa-link"><i class="fa-brands fa-whatsapp"></i> +226 70 00 00 00</a>
+            </div>
+          </div>
+          <div class="ci-card"><div class="ci-icon"><i class="fa-solid fa-envelope"></i></div><div><h4>Email</h4><p>bellechic@gmail.com</p></div></div>
+          <div class="ci-card"><div class="ci-icon"><i class="fa-solid fa-phone"></i></div><div><h4>Téléphone</h4><p>+226 70 00 00 00</p></div></div>
+          <div class="ci-card"><div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div><div><h4>Adresse</h4><p>Ouagadougou, Burkina Faso</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#accueil" class="logo footer-logo">Belle <em>&amp;</em> Chic</a>
+          <p>La mode féminine élégante, accessible et moderne. Livraison au Burkina Faso.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://wa.me/22670000000" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul><li><a href="#accueil">Accueil</a></li><li><a href="#collection">Collection</a></li><li><a href="#produits">Boutique</a></li><li><a href="#apropos">À propos</a></li><li><a href="#contact">Contact</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Catégories</h4>
+          <ul><li><a href="#produits">Sacs à main</a></li><li><a href="#produits">Robes & Tailleurs</a></li><li><a href="#produits">Lingerie</a></li><li><a href="#produits">Nuisettes</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h4>Commander vite</h4>
+          <p style="font-size:.85rem;margin-bottom:16px;opacity:.7;">Passez commande via WhatsApp, réponse garantie en 30 min.</p>
+          <a href="https://wa.me/22670000000" target="_blank" class="footer-wa-cta"><i class="fa-brands fa-whatsapp"></i> Ouvrir WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Belle &amp; Chic — Tous droits réservés.</p>
+        <p>Fait avec <i class="fa fa-heart" style="color:var(--rose)"></i> à Ouagadougou</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WA BUTTON -->
+  <a href="https://wa.me/22670000000?text=Bonjour%20Belle%20%26%20Chic,%20je%20voudrais%20commander." target="_blank" class="float-wa" id="floatWa">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Commander</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
