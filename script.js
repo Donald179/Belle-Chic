@@ -120,9 +120,178 @@ filterBtns.forEach(btn => {
   });
 });
 
-/* ── 7. CONTACT FORM ── */
+/* ── 7. PRODUCT PREVIEW MODAL ── */
+const productModal = document.getElementById('productModal');
+const modalBackdrop = document.getElementById('modalBackdrop');
+const modalClose = document.getElementById('modalClose');
+const modalProductImage = document.getElementById('modalProductImage');
+const modalProductCategory = document.getElementById('modalProductCategory');
+const modalProductTitle = document.getElementById('modalProductTitle');
+const modalProductPrice = document.getElementById('modalProductPrice');
+const modalProductDesc = document.getElementById('modalProductDesc');
+const sizeOptions = document.getElementById('sizeOptions');
+const colorOptions = document.getElementById('colorOptions');
+const modalOrderBtn = document.getElementById('modalOrderBtn');
+const productOptions = document.querySelector('.product-options');
+
+const productOptionPresets = {
+  sac: { sizes: ['Petit', 'Moyen', 'Grand'], colors: ['Caramel', 'Noir', 'Blanc', 'Rose'] },
+  vetement: { sizes: ['XS', 'S', 'M', 'L', 'XL'], colors: ['Beige', 'Rose', 'Noir', 'Blanc'] },
+  lingerie: { sizes: ['S', 'M', 'L'], colors: ['Noir', 'Rouge', 'Beige'] },
+  chaussures: { sizes: ['36', '37', '38', '39', '40', '41'], colors: ['Noir', 'Blanc', 'Rouge'] },
+  parfun: { sizes: [], colors: [] },
+  parfum: { sizes: [], colors: [] },
+  default: { sizes: ['S', 'M', 'L'], colors: ['Noir', 'Beige', 'Rose'] },
+};
+
+let currentProductName = '';
+let selectedSize = '';
+let selectedColor = '';
+
+function getProductPreset(card) {
+  const categoryKey = card.dataset.category?.toLowerCase() || 'default';
+  return productOptionPresets[categoryKey] || productOptionPresets.default;
+}
+
+function setModalOrderLink() {
+  let message = `Bonjour Belle & Chic, je souhaite commander ${currentProductName}.`;
+  if (selectedSize) message = `Bonjour Belle & Chic, je souhaite commander ${currentProductName} en taille ${selectedSize}.`;
+  if (selectedColor && !selectedSize) message = `Bonjour Belle & Chic, je souhaite commander ${currentProductName} en couleur ${selectedColor}.`;
+  if (selectedSize && selectedColor) message = `Bonjour Belle & Chic, je souhaite commander ${currentProductName} en taille ${selectedSize} et couleur ${selectedColor}.`;
+  modalOrderBtn.href = `https://wa.me/22655757299?text=${encodeURIComponent(message)}`;
+}
+
+function createOptionButtons(container, options, activeValue, onSelect) {
+  container.innerHTML = '';
+  options.forEach(option => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = `option-btn${option === activeValue ? ' active' : ''}`;
+    button.textContent = option;
+    button.addEventListener('click', () => {
+      container.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      onSelect(option);
+      setModalOrderLink();
+    });
+    container.appendChild(button);
+  });
+}
+
+function openProductModal(card) {
+  const img = card.querySelector('.pc-img img');
+  const title = card.querySelector('h3')?.textContent.trim() || 'Produit';
+  const category = card.querySelector('.pc-cat')?.textContent.trim() || '';
+  const price = card.querySelector('.pc-price')?.textContent.trim() || '';
+  let description = `Sélectionnez la taille et la couleur souhaitées avant de commander votre ${title}.`;
+
+  currentProductName = title;
+  modalProductImage.src = img?.src || '';
+  modalProductImage.alt = img?.alt || title;
+  modalProductCategory.textContent = category;
+  modalProductTitle.textContent = title;
+  modalProductPrice.textContent = price;
+  modalProductDesc.textContent = description;
+
+  const preset = getProductPreset(card);
+  selectedSize = preset.sizes[0];
+  selectedColor = preset.colors[0];
+
+  // If product has no size/color options (e.g. parfums), hide options and simplify description
+  if ((preset.sizes.length === 0) && (preset.colors.length === 0)) {
+    description = `Produit prêt à commander — cliquez sur Commander.`;
+    if (productOptions) productOptions.style.display = 'none';
+    // clear any leftover option buttons
+    if (sizeOptions) sizeOptions.innerHTML = '';
+    if (colorOptions) colorOptions.innerHTML = '';
+    selectedSize = '';
+    selectedColor = '';
+  } else {
+    if (productOptions) productOptions.style.display = '';
+    createOptionButtons(sizeOptions, preset.sizes, selectedSize, (value) => selectedSize = value);
+    createOptionButtons(colorOptions, preset.colors, selectedColor, (value) => selectedColor = value);
+  }
+  setModalOrderLink();
+
+  if (productModal) {
+    productModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeProductModal() {
+  if (productModal) {
+    productModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function replacePreviewLinks() {
+  document.querySelectorAll('.pc-overlay .pc-wa-btn').forEach(anchor => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'pc-preview-btn';
+    button.innerHTML = anchor.innerHTML;
+    anchor.replaceWith(button);
+  });
+}
+
+function initProductPreview() {
+  replacePreviewLinks();
+
+  productCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('button')) return;
+      openProductModal(card);
+    });
+  });
+
+  document.querySelectorAll('.pc-preview-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = e.target.closest('.product-card');
+      if (card) openProductModal(card);
+    });
+  });
+
+  if (modalBackdrop) modalBackdrop.addEventListener('click', closeProductModal);
+  if (modalClose) modalClose.addEventListener('click', closeProductModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && productModal?.classList.contains('active')) {
+      closeProductModal();
+    }
+  });
+}
+
+initProductPreview();
+
+/* ── 8. CONTACT FORM ── */
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
+
+const reviewForm = document.getElementById('reviewForm');
+const reviewSuccess = document.getElementById('reviewSuccess');
+
+if (reviewForm) {
+  reviewForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const firstName = document.getElementById('reviewFirstName').value.trim();
+    const lastName = document.getElementById('reviewLastName').value.trim();
+    const content = document.getElementById('reviewMessage').value.trim();
+    if (!firstName || !lastName || !content) {
+      alert('Veuillez compléter tous les champs pour envoyer votre avis.');
+      return;
+    }
+    const reviews = JSON.parse(localStorage.getItem('bc_reviews') || '[]');
+    reviews.push({ firstName, lastName, content, date: new Date().toLocaleString() });
+    localStorage.setItem('bc_reviews', JSON.stringify(reviews));
+    reviewForm.reset();
+    if (reviewSuccess) {
+      reviewSuccess.style.display = 'block';
+      setTimeout(() => { reviewSuccess.style.display = 'none'; }, 5000);
+    }
+  });
+}
 
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
